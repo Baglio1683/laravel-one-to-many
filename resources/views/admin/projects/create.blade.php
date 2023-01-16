@@ -21,6 +21,20 @@
                     @enderror
                 </div>
 
+                {{-- Tipo  --}}
+
+
+                <div class="form-group mb-3">
+                    <label for="type">Tipo Progetto: </label>
+                    <select name="type_id" id="type">
+                        <option value="">Nessuna Categoria</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}"> {{ $type->name }}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+
                 {{-- IMMAGINE  --}}
                 <form action="" method="POST" enctype="multipart/form-data">
                     @csrf
