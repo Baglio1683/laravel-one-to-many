@@ -50,6 +50,7 @@ class ProjectController extends Controller
             $path = Storage::put('projects_images',  $request->cover_image);
             $form_data['cover_image'] = $path; 
         }
+        $form_data['user_id'] = Auth::id(); 
         $project = Project::create($form_data); //fillable is necessary
         return redirect()->route('admin.projects.index')->with('message', 'il progetto è stato creato con successo'); 
     }
